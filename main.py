@@ -80,7 +80,7 @@ def get_comparison():
         "country2": {"name": current_pair[1], "rating": countries[current_pair[1]]["rating"], "photo": countries[current_pair[1]]["photo"], "artist_name": countries[current_pair[1]]["name"]}
     }
 
-@app.post("/api/vote", methods=["GET", "POST"])
+@app.post("/api/vote")
 def vote(vote_request: VoteRequest):
     global current_pair
     if not current_pair:
@@ -133,6 +133,3 @@ def get_top():
 @app.get("/")
 def read_root():
     return FileResponse("index.html")
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
