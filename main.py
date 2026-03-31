@@ -112,6 +112,10 @@ def vote(vote_request: VoteRequest):
     
     return {"success": True}
 
+@app.api_route("/api/data", methods=["GET", "POST"])
+async def data():
+    return {"ok": True}
+
 @app.get("/api/top")
 def get_top():
     sorted_countries = sorted(
