@@ -80,7 +80,7 @@ def get_comparison():
         "country2": {"name": current_pair[1], "rating": countries[current_pair[1]]["rating"], "photo": countries[current_pair[1]]["photo"], "artist_name": countries[current_pair[1]]["name"]}
     }
 
-@app.post("/api/vote")
+@app.post("/api/vote", methods=["GET", "POST"])
 def vote(vote_request: VoteRequest):
     global current_pair
     if not current_pair:
