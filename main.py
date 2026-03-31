@@ -102,12 +102,12 @@ def vote(vote_request: VoteRequest):
     current_pair = get_new_pair()
 
     # update database
-    conn = sqlite3.connect("eurovision.db")
+    '''conn = sqlite3.connect("eurovision.db")
     cursor = conn.cursor()
     cursor.execute("UPDATE countries SET rating = ?, games = ? WHERE name = ?", (countries[winner]["rating"], countries[winner]["games"], winner))
     cursor.execute("UPDATE countries SET rating = ?, games = ? WHERE name = ?", (countries[loser]["rating"], countries[loser]["games"], loser))
     conn.commit()
-    conn.close()
+    conn.close()'''
 
     
     return {"success": True}
